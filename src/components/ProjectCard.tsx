@@ -15,7 +15,7 @@ export function ProjectCard({ project, variant = "detail" }: ProjectCardProps) {
   return (
     <motion.article
       variants={staggerItem}
-      whileHover={{ y: -4 }}
+      whileHover={{ y: -4, transition: { duration: 0.25 } }}
       className="panel group h-full overflow-hidden"
     >
       <div className="relative">
@@ -39,7 +39,7 @@ export function ProjectCard({ project, variant = "detail" }: ProjectCardProps) {
           />
         )}
 
-        <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-[#d9e8ff] bg-white/90 px-3 py-1 text-xs uppercase tracking-[0.2em] text-[#123b73] backdrop-blur">
+        <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-[#dce8fb] bg-white/95 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[#123b73] backdrop-blur">
           <Play size={14} />
           {project.category.replace("-", " ")}
         </div>
@@ -47,9 +47,11 @@ export function ProjectCard({ project, variant = "detail" }: ProjectCardProps) {
 
       <div className="space-y-5 p-6">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-[#2b6de0]">{project.role}</p>
-          <h3 className="mt-3 font-serif text-3xl text-[#0d2c5f]">{project.title}</h3>
-          <p className="mt-3 text-sm leading-7 text-[#123b73]/76">{project.summary}</p>
+          <p className="text-[11px] uppercase tracking-[0.28em] text-[#2b6de0]">{project.role}</p>
+          <h3 className="mt-3 font-serif text-[2rem] leading-tight text-[#0d2c5f]">
+            {project.title}
+          </h3>
+          <p className="mt-3 text-sm leading-7 text-[#123b73]/74">{project.summary}</p>
         </div>
 
         <ul className="grid gap-3 text-sm leading-6 text-[#123b73]/76">
@@ -66,7 +68,7 @@ export function ProjectCard({ project, variant = "detail" }: ProjectCardProps) {
             {project.tools.map((tool) => (
               <span
                 key={tool}
-                className="rounded-full border border-[#d9e8ff] bg-[#eef4ff] px-3 py-1 text-xs uppercase tracking-[0.18em] text-[#123b73]/75"
+                className="rounded-full border border-[#e2ebfb] bg-[#f8fbff] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[#123b73]/75"
               >
                 {tool}
               </span>
@@ -75,8 +77,8 @@ export function ProjectCard({ project, variant = "detail" }: ProjectCardProps) {
         ) : null}
 
         {project.outcomes?.length ? (
-          <div className="rounded-[1.75rem] border border-[#d9e8ff] bg-[#f5f9ff] p-4">
-            <p className="text-xs uppercase tracking-[0.28em] text-[#2b6de0]">Outcome</p>
+          <div className="rounded-[1.25rem] border border-[#e2ebfb] bg-[#fbfdff] p-4">
+            <p className="text-[11px] uppercase tracking-[0.26em] text-[#2b6de0]">Outcome</p>
             <ul className="mt-3 space-y-2 text-sm leading-6 text-[#123b73]/74">
               {project.outcomes.map((outcome) => (
                 <li key={outcome}>{outcome}</li>

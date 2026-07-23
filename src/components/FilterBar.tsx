@@ -10,7 +10,7 @@ type FilterBarProps = {
 export function FilterBar({ activeCategory, onSelect }: FilterBarProps) {
   return (
     <div
-      className="flex flex-wrap gap-3 rounded-[2rem] border border-white/10 bg-white/5 p-3"
+      className="flex flex-wrap gap-3 rounded-[1.5rem] border border-[#e2ebfb] bg-[#fbfdff] p-3"
       aria-label="Project filters"
     >
       {projectCategories.map((category) => (

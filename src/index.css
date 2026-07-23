@@ -24,7 +24,9 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  background:
+    radial-gradient(circle at top, rgba(43, 109, 224, 0.06), transparent 24rem),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
 }
 
 a {
@@ -48,22 +50,30 @@ button {
 
 @layer components {
   .panel {
-    @apply rounded-[1.75rem] border border-[#dfeafc] bg-white shadow-[0_14px_34px_rgba(43,109,224,0.06)] transition duration-300;
+    @apply rounded-[1.5rem] border border-[#e2ebfb] bg-white shadow-[0_10px_26px_rgba(15,53,117,0.05)] transition duration-300;
   }
 
   .tag {
-    @apply rounded-full border border-[#e3ecfb] bg-[#f8fbff] px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-[#123b73];
+    @apply rounded-full border border-[#e5edf9] bg-[#fbfdff] px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-[#123b73];
   }
 
   .cta-primary {
-    @apply inline-flex items-center gap-2 rounded-full bg-[#2b6de0] px-5 py-3 text-sm font-medium text-white transition duration-300 hover:translate-y-[-1px] hover:bg-[#2159bd];
+    @apply inline-flex items-center gap-2 rounded-full bg-[#164fb4] px-5 py-3 text-sm font-medium text-white transition duration-300 hover:translate-y-[-1px] hover:bg-[#123f91];
   }
 
   .cta-secondary {
-    @apply inline-flex items-center gap-2 rounded-full border border-[#d7e5fb] bg-white px-5 py-3 text-sm text-[#123b73] transition duration-300 hover:border-[#2b6de0] hover:text-[#2b6de0];
+    @apply inline-flex items-center gap-2 rounded-full border border-[#dbe7f8] bg-white px-5 py-3 text-sm text-[#123b73] transition duration-300 hover:border-[#164fb4] hover:text-[#164fb4];
   }
 
   .footer-link {
-    @apply inline-flex items-center gap-3 rounded-full border border-[#dfeafc] bg-white px-4 py-3 transition duration-300 hover:border-[#2b6de0] hover:text-[#2b6de0];
+    @apply inline-flex items-center gap-3 rounded-full border border-[#e2ebfb] bg-white px-4 py-3 transition duration-300 hover:border-[#164fb4] hover:text-[#164fb4];
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-medium uppercase tracking-[0.28em] text-[#2b6de0];
+  }
+
+  .subtle-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-[#dbe7f8] to-transparent;
   }
 }

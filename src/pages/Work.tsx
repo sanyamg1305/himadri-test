@@ -21,8 +21,8 @@ export default function Work() {
       <Reveal>
         <SectionHeading
           eyebrow="Work archive"
-          title="A filterable archive of campaigns, social thinking, writing, and personal experiments."
-          description="The original presentation moves from identity into proof. This page turns that proof into a browsable archive, letting viewers focus on the type of work that matters most to them."
+          title="A structured archive of campaigns, writing, strategy, and independent work."
+          description="This archive is meant to feel organized without flattening the personality of the work, whether the focus is content strategy, scripting, campaign thinking, or self-initiated creative projects."
         />
       </Reveal>
 

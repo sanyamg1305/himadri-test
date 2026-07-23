@@ -17,15 +17,15 @@ describe("Portfolio app", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: /himadri jain turns words, strategy, and digital intuition into stories that move/i,
+        name: /himadri jain shapes words, ideas, and digital storytelling into work that feels alive/i,
       }),
     ).toBeInTheDocument();
 
-    await user.click(screen.getByRole("link", { name: /explore the work/i }));
+    await user.click(screen.getByRole("link", { name: /view selected work/i }));
 
     expect(
       await screen.findByRole("heading", {
-        name: /a filterable archive of campaigns, social thinking, writing, and personal experiments/i,
+        name: /a structured archive of campaigns, writing, strategy, and independent work/i,
       }),
     ).toBeInTheDocument();
   });

@@ -43,6 +43,11 @@ export const skills = [
   "Creative Direction",
 ];
 
+export const favoriteQuotes = [
+  "Forgetting gives you space for new things.",
+  "Too imaginative to stay still, too curious to stop learning.",
+];
+
 export const metrics: Metric[] = [
   {
     label: "Professional sprint",

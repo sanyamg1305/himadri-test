@@ -15,8 +15,8 @@ export default function Media() {
         <section className="space-y-8">
           <SectionHeading
             eyebrow="Books"
-            title="Published work that grounds the portfolio in voice, reflection, and authorship."
-            description="The books section translates the original slide deck into an editorial shelf with direct purchase links and visual proof of published work."
+            title="Published work that reflects authorship, imagination, and a lasting creative voice."
+            description="The books anchor the portfolio in something deeply personal: long-form writing that carries Himadri's voice beyond campaigns and short-form content."
           />
           <motion.div
             variants={staggerContainer}
@@ -36,8 +36,8 @@ export default function Media() {
         <section className="space-y-8">
           <SectionHeading
             eyebrow="Social ecosystem"
-            title="Three channels, three tones, one consistent creative voice."
-            description="Instead of treating social profiles like icons in a footer, this page frames each platform as a distinct storytelling surface with its own rhythm and audience."
+            title="Three channels with distinct audiences, moods, formats, and ways of speaking."
+            description="Each platform holds a different version of the voice, showing how Himadri adapts storytelling across public, personal, reflective, and conversational spaces."
           />
           <motion.div
             variants={staggerContainer}
@@ -58,8 +58,8 @@ export default function Media() {
           <div className="space-y-6">
             <SectionHeading
               eyebrow="Video CV"
-              title="A playable version of the portfolio story, built straight from the supplied MP4."
-              description="The local video CV is embedded here so recruiters and collaborators can move from reading to watching without leaving the site."
+              title="A direct video introduction for collaborators, curious viewers, and future opportunities."
+              description="The local video CV is embedded here so visitors can move from reading the portfolio to hearing the person behind it in a more immediate, human format."
             />
             <motion.div variants={staggerItem} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="panel overflow-hidden">
               <video className="w-full" controls playsInline poster={profile.heroImage}>

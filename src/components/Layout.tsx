@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { ArrowUpRight, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
@@ -10,6 +11,13 @@ type LayoutProps = {
 };
 
 export function Layout({ children }: LayoutProps) {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 130,
+    damping: 24,
+    mass: 0.2,
+  });
+
   const socialIcons = {
     Instagram,
     YouTube: Youtube,
@@ -18,7 +26,12 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#f7fbff] text-[#123b73]">
-      <header className="sticky top-0 z-40 border-b border-[#e3ecfb] bg-white/88 backdrop-blur-xl">
+      <motion.div
+        className="fixed inset-x-0 top-0 z-50 h-[2px] origin-left bg-[#164fb4]"
+        style={{ scaleX }}
+      />
+
+      <header className="sticky top-0 z-40 border-b border-[#e3ecfb] bg-white/92 backdrop-blur-xl">
         <div className="container flex items-center justify-between gap-6 px-6 py-4 lg:px-10">
           <NavLink to="/" className="flex items-center gap-3">
             <img
@@ -29,7 +42,7 @@ export function Layout({ children }: LayoutProps) {
             <div>
               <p className="font-serif text-xl leading-none text-[#0d2c5f]">{profile.name}</p>
               <p className="mt-1 text-xs uppercase tracking-[0.28em] text-[#2b6de0]">
-                Portfolio 2026
+                Writing in motion
               </p>
             </div>
           </NavLink>
@@ -43,8 +56,8 @@ export function Layout({ children }: LayoutProps) {
                   cn(
                     "rounded-full px-4 py-2 text-sm transition",
                     isActive
-                      ? "bg-[#2b6de0] text-white"
-                      : "text-[#123b73]/75 hover:bg-[#f5f9ff] hover:text-[#123b73]",
+                      ? "bg-[#164fb4] text-white"
+                      : "text-[#123b73]/75 hover:bg-[#f6f9fe] hover:text-[#123b73]",
                   )
                 }
               >
@@ -55,9 +68,9 @@ export function Layout({ children }: LayoutProps) {
 
           <a
             href={`mailto:${profile.email}`}
-            className="hidden rounded-full border border-[#c8dcff] bg-white px-4 py-2 text-sm text-[#123b73] transition hover:border-[#2b6de0] hover:text-[#2b6de0] md:inline-flex"
+            className="hidden rounded-full border border-[#dbe7f8] bg-white px-4 py-2 text-sm font-medium text-[#123b73] transition hover:border-[#164fb4] hover:text-[#164fb4] md:inline-flex"
           >
-            Let&apos;s talk
+            Contact
           </a>
         </div>
       </header>
@@ -71,9 +84,9 @@ export function Layout({ children }: LayoutProps) {
               Stories that move across books, campaigns, and digital spaces.
             </p>
             <p className="mt-3 max-w-xl text-sm leading-7 text-[#123b73]/72">
-              Built from the supplied deck and video CV, this portfolio turns Himadri Jain&apos;s
-              work into a living, shareable experience with real links, playable media, and clear
-              conversion paths.
+              This portfolio brings Himadri Jain&apos;s work together as a living, shareable space:
+              part archive, part introduction, and part expression of how she thinks, writes, and
+              sees the world.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
