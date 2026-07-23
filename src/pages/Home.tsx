@@ -79,7 +79,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <div className="relative">
+        <div className="space-y-4 sm:space-y-6">
           <motion.img
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -92,7 +92,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
-            className="panel relative z-20 mt-4 max-w-xs p-4 sm:absolute sm:-bottom-6 sm:left-0 sm:mt-0 sm:p-5"
+            className="panel max-w-sm p-4 sm:p-5"
           >
             <p className="text-[11px] uppercase tracking-[0.24em] text-[#2b6de0]">Creative voice</p>
             <p className="mt-3 font-serif text-2xl text-[#0d2c5f]">{profile.title}</p>
