@@ -121,17 +121,53 @@ export default function Home() {
             viewport={{ once: true, amount: 0.2 }}
             className="grid gap-5"
           >
-            {experienceHighlights.map((item) => (
-              <motion.article key={item.title} variants={staggerItem} className="panel p-6 sm:p-7">
-                <div className="flex items-start gap-4 sm:gap-5">
-                  <div className="min-w-8 pt-1 sm:min-w-10">
-                    <span className="text-[11px] font-medium uppercase tracking-[0.24em] text-[#2b6de0]">
-                      0{experienceHighlights.indexOf(item) + 1}
+            {experienceHighlights.map((item, index) => (
+              <motion.article
+                key={item.title}
+                variants={staggerItem}
+                whileHover={{ y: -8, scale: 1.012 }}
+                transition={{ type: "spring", stiffness: 260, damping: 22 }}
+                className="panel group relative overflow-hidden p-6 sm:p-7"
+              >
+                <motion.div
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(43,109,224,0.14),transparent_42%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                />
+                <motion.div
+                  aria-hidden="true"
+                  className="absolute inset-x-0 bottom-0 h-[2px] origin-left bg-gradient-to-r from-[#2b6de0] via-[#8fb7ff] to-transparent"
+                  initial={{ scaleX: 0.18, opacity: 0.45 }}
+                  whileHover={{ scaleX: 1, opacity: 1 }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
+                />
+                <div className="relative flex items-start gap-4 sm:gap-5">
+                  <motion.div
+                    className="min-w-8 pt-1 sm:min-w-10"
+                    initial={false}
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                  >
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#f4f8ff] text-[11px] font-medium uppercase tracking-[0.14em] text-[#2b6de0] sm:h-9 sm:w-9">
+                      0{index + 1}
                     </span>
-                  </div>
+                  </motion.div>
                   <div>
-                    <h3 className="font-serif text-2xl text-[#0d2c5f]">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-[#123b73]/76">{item.body}</p>
+                    <motion.h3
+                      className="font-serif text-2xl text-[#0d2c5f]"
+                      initial={false}
+                      whileHover={{ x: 6 }}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                    >
+                      {item.title}
+                    </motion.h3>
+                    <motion.p
+                      className="mt-2 text-sm leading-7 text-[#123b73]/76"
+                      initial={false}
+                      whileHover={{ x: 3 }}
+                      transition={{ duration: 0.28, ease: "easeOut" }}
+                    >
+                      {item.body}
+                    </motion.p>
                   </div>
                 </div>
               </motion.article>
