@@ -13,10 +13,9 @@ import {
   metrics,
   profile,
   projects,
-  skills,
 } from "@/data/portfolio";
 
-const featuredProjects = projects.filter((project) => project.featured).slice(0, 4);
+const featuredProjects = projects.filter((project) => project.featured).slice(0, 2);
 const heroHighlights = [
   { label: "Organic reach", value: "200K+" },
   { label: "Content delivered", value: "100+" },
@@ -30,32 +29,32 @@ const fadeInUp = {
 
 export default function Home() {
   return (
-    <div className="container space-y-28 px-6 py-12 lg:px-10 lg:py-16">
+    <div className="container space-y-24 px-4 py-10 sm:px-6 sm:py-12 lg:space-y-32 lg:px-10 lg:py-20">
       <motion.section
         initial="hidden"
         animate="visible"
         variants={fadeInUp}
         transition={{ duration: 0.7 }}
-        className="grid items-center gap-12 lg:grid-cols-[1.1fr,0.9fr]"
+        className="grid items-center gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:gap-12"
       >
         <div>
-          <div className="inline-flex items-center rounded-full border border-[#e3ecfb] bg-[#fbfdff] px-4 py-2 text-[11px] font-medium uppercase tracking-[0.26em] text-[#2b6de0]">
+          <div className="inline-flex items-center rounded-full border border-[#e3ecfb] bg-[#fbfdff] px-3 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[#2b6de0] sm:px-4 sm:text-[11px] sm:tracking-[0.26em]">
             Writing • Storytelling • Digital Expression
           </div>
-          <h1 className="mt-8 max-w-4xl font-serif text-5xl leading-[0.98] text-[#0d2c5f] md:text-[4.35rem]">
+          <h1 className="mt-6 max-w-4xl font-serif text-[2.9rem] leading-[0.98] text-[#0d2c5f] sm:mt-8 sm:text-[3.6rem] md:text-[4.35rem]">
             Himadri Jain shapes words, ideas, and digital storytelling into work that feels alive.
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-[#123b73]/76 md:text-lg">
+          <p className="mt-5 max-w-2xl text-[15px] leading-7 text-[#123b73]/76 sm:mt-6 sm:text-base sm:leading-8 md:text-lg">
             {profile.introduction}
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center">
             <Link className="cta-primary" to="/work">
               View selected work
               <ArrowRight size={18} />
             </Link>
             <Link className="cta-secondary" to="/media">
-              Open media profile
+              Explore books and media
             </Link>
           </div>
 
@@ -63,31 +62,18 @@ export default function Home() {
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="mt-10 flex flex-wrap gap-3"
-          >
-            {skills.slice(0, 6).map((skill) => (
-              <motion.span key={skill} variants={staggerItem} className="tag">
-                {skill}
-              </motion.span>
-            ))}
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="mt-10 grid gap-4 sm:grid-cols-3"
+            className="mt-8 grid gap-3 border-t border-[#dbe7f8] pt-6 sm:mt-10 sm:grid-cols-3"
           >
             {heroHighlights.map((item) => (
               <motion.div
                 key={item.label}
                 variants={staggerItem}
-                className="rounded-[1.25rem] border border-[#e2ebfb] bg-white px-5 py-4"
+                className="px-1 py-1"
               >
-                <p className="text-[11px] uppercase tracking-[0.26em] text-[#2b6de0]">
+                <p className="text-[10px] uppercase tracking-[0.22em] text-[#2b6de0] sm:text-[11px] sm:tracking-[0.26em]">
                   {item.label}
                 </p>
-                <p className="mt-2 font-serif text-3xl text-[#0d2c5f]">{item.value}</p>
+                <p className="mt-2 font-serif text-[2rem] text-[#0d2c5f] sm:text-3xl">{item.value}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -100,13 +86,13 @@ export default function Home() {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
             src={profile.heroImage}
             alt={profile.name}
-            className="relative z-10 h-[31rem] w-full rounded-[1.75rem] object-cover shadow-[0_24px_54px_rgba(43,109,224,0.10)]"
+            className="relative z-10 h-[22rem] w-full rounded-[1.5rem] object-cover shadow-[0_24px_54px_rgba(43,109,224,0.10)] sm:h-[27rem] sm:rounded-[1.75rem] lg:h-[31rem]"
           />
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
-            className="panel absolute -bottom-6 left-0 z-20 max-w-xs p-5"
+            className="panel relative z-20 mt-4 max-w-xs p-4 sm:absolute sm:-bottom-6 sm:left-0 sm:mt-0 sm:p-5"
           >
             <p className="text-[11px] uppercase tracking-[0.24em] text-[#2b6de0]">Creative voice</p>
             <p className="mt-3 font-serif text-2xl text-[#0d2c5f]">{profile.title}</p>
@@ -121,7 +107,7 @@ export default function Home() {
       </motion.section>
 
       <Reveal>
-        <section className="grid gap-10 lg:grid-cols-[0.95fr,1.05fr]">
+        <section className="grid gap-12 lg:grid-cols-[0.9fr,1.1fr] lg:gap-16">
           <SectionHeading
             eyebrow="Creative Profile"
             title="A multidisciplinary practice shaped by writing, strategy, curiosity, and feeling."
@@ -133,12 +119,12 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="grid gap-4"
+            className="grid gap-5"
           >
             {experienceHighlights.map((item) => (
-              <motion.article key={item.title} variants={staggerItem} className="panel p-6">
-                <div className="flex items-start gap-5">
-                  <div className="min-w-10 pt-1">
+              <motion.article key={item.title} variants={staggerItem} className="panel p-6 sm:p-7">
+                <div className="flex items-start gap-4 sm:gap-5">
+                  <div className="min-w-8 pt-1 sm:min-w-10">
                     <span className="text-[11px] font-medium uppercase tracking-[0.24em] text-[#2b6de0]">
                       0{experienceHighlights.indexOf(item) + 1}
                     </span>
@@ -155,40 +141,24 @@ export default function Home() {
       </Reveal>
 
       <Reveal>
-        <section className="space-y-8">
-          <SectionHeading
-            eyebrow="Words To Return To"
-            title="A few lines that carry her way of seeing the world."
-            description="These are Himadri's own words, placed here as a quieter expression of the sensibility behind the work."
-          />
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid gap-5 md:grid-cols-2"
-          >
+        <section className="px-1">
+          <p className="text-[10px] uppercase tracking-[0.22em] text-[#2b6de0] sm:text-[11px] sm:tracking-[0.24em]">
+            Himadri&apos;s words
+          </p>
+          <div className="mt-5 grid gap-6 md:grid-cols-2">
             {favoriteQuotes.map((quote) => (
-              <motion.blockquote
-                key={quote}
-                variants={staggerItem}
-                className="panel flex min-h-[220px] flex-col justify-between p-7"
-              >
-                <p className="text-[11px] uppercase tracking-[0.24em] text-[#2b6de0]">
-                  Himadri's words
-                </p>
-                <p className="mt-8 font-serif text-3xl leading-tight text-[#0d2c5f]">
+              <blockquote key={quote} className="border-l border-[#dbe7f8] pl-5">
+                <p className="font-serif text-[1.85rem] leading-tight text-[#0d2c5f] sm:text-[2.3rem]">
                   "{quote}"
                 </p>
-                <div className="subtle-divider mt-8 max-w-16" />
-              </motion.blockquote>
+              </blockquote>
             ))}
-          </motion.div>
+          </div>
         </section>
       </Reveal>
 
       <Reveal>
-        <section className="space-y-8">
+        <section className="space-y-10">
           <SectionHeading
             eyebrow="Track Record"
             title="A body of work grounded in output, reach, and creative range."
@@ -199,7 +169,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="grid gap-5 md:grid-cols-2 xl:grid-cols-4"
+            className="grid gap-6 md:grid-cols-2 xl:grid-cols-4"
           >
             {metrics.map((metric) => (
               <MetricCard key={metric.label} metric={metric} />
@@ -209,12 +179,12 @@ export default function Home() {
       </Reveal>
 
       <Reveal>
-        <section className="space-y-8">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <section className="space-y-10">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <SectionHeading
               eyebrow="Selected Work"
-              title="Campaign concepts, production pieces, and writing-led work with personality."
-              description="Each featured piece shows a different side of Himadri's practice: idea building, scripting, social thinking, filmed execution, and the instinct to make work feel emotionally true."
+              title="A focused selection of work instead of the full archive."
+              description="Two pieces up front keep the homepage easier to scan, while the full archive stays available for deeper exploration."
             />
             <Link className="cta-secondary self-start md:self-auto" to="/work">
               View full archive
@@ -248,14 +218,11 @@ export default function Home() {
               Explore the archive, spend time with the books and socials, or watch the video CV to
               see how the voice carries across different mediums.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8">
               <a className="cta-primary" href={`mailto:${profile.email}`}>
                 Start a conversation
                 <ArrowRight size={18} />
               </a>
-              <Link className="cta-secondary" to="/media">
-                Open media library
-              </Link>
             </div>
           </div>
         </section>

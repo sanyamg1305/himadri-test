@@ -10,9 +10,9 @@ import { books, contactLinks, profile, socials, videoCv } from "@/data/portfolio
 
 export default function Media() {
   return (
-    <div className="container space-y-20 px-6 py-12 lg:px-10 lg:py-16">
+    <div className="container space-y-24 px-4 py-10 sm:px-6 sm:py-12 lg:space-y-28 lg:px-10 lg:py-20">
       <Reveal>
-        <section className="space-y-8">
+        <section className="space-y-10">
           <SectionHeading
             eyebrow="Books"
             title="Published work that reflects authorship, imagination, and a lasting creative voice."
@@ -33,7 +33,7 @@ export default function Media() {
       </Reveal>
 
       <Reveal>
-        <section className="space-y-8">
+        <section className="space-y-10">
           <SectionHeading
             eyebrow="Social ecosystem"
             title="Three channels with distinct audiences, moods, formats, and ways of speaking."
@@ -54,7 +54,7 @@ export default function Media() {
       </Reveal>
 
       <Reveal>
-        <section className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr]">
+        <section className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:gap-14">
           <div className="space-y-6">
             <SectionHeading
               eyebrow="Video CV"
@@ -113,7 +113,7 @@ export default function Media() {
                 ))}
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-wrap items-center gap-3">
                 <a className="cta-primary" href={`mailto:${profile.email}`}>
                   <Mail size={18} />
                   Email Himadri

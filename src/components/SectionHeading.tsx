@@ -8,7 +8,7 @@ export function SectionHeading({ eyebrow, title, description }: SectionHeadingPr
   return (
     <div className="max-w-3xl">
       <p className="eyebrow">{eyebrow}</p>
-      <h2 className="mt-3 font-serif text-[2.5rem] leading-tight text-[#0d2c5f] md:text-[3.1rem]">
+      <h2 className="mt-3 font-serif text-[2.1rem] leading-tight text-[#0d2c5f] sm:text-[2.5rem] md:text-[3.1rem]">
         {title}
       </h2>
       <div className="subtle-divider mt-5 max-w-24" />

@@ -32,32 +32,73 @@ export function Layout({ children }: LayoutProps) {
       />
 
       <header className="sticky top-0 z-40 border-b border-[#e3ecfb] bg-white/92 backdrop-blur-xl">
-        <div className="container flex items-center justify-between gap-6 px-6 py-4 lg:px-10">
-          <NavLink to="/" className="flex items-center gap-3">
-            <img
-              src="/logo-hj.svg"
-              alt="HJ monogram logo"
-              className="h-11 w-11 shrink-0"
-            />
-            <div>
-              <p className="font-serif text-xl leading-none text-[#0d2c5f]">{profile.name}</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.28em] text-[#2b6de0]">
-                Writing in motion
-              </p>
-            </div>
-          </NavLink>
+        <div className="container px-4 py-3 sm:px-6 lg:px-10">
+          <div className="flex items-center justify-between gap-4">
+            <NavLink to="/" className="flex min-w-0 items-center gap-3">
+              <img
+                src="/logo-hj.svg"
+                alt="HJ monogram logo"
+                className="h-10 w-10 shrink-0 sm:h-11 sm:w-11"
+              />
+              <div className="min-w-0">
+                <p className="truncate font-serif text-lg leading-none text-[#0d2c5f] sm:text-xl">
+                  {profile.name}
+                </p>
+                <p className="mt-1 text-[10px] uppercase tracking-[0.24em] text-[#2b6de0] sm:text-xs sm:tracking-[0.28em]">
+                  Writing in motion
+                </p>
+              </div>
+            </NavLink>
 
-          <nav className="hidden items-center gap-2 md:flex">
+            <nav className="hidden items-center gap-2 md:flex">
+              {navLinks.map((link) => (
+                <NavLink
+                  key={link.href}
+                  to={link.href}
+                  className={({ isActive }) =>
+                    cn(
+                      "rounded-full px-4 py-2 text-sm transition",
+                      isActive
+                        ? "bg-[#164fb4] text-white"
+                        : "text-[#123b73]/75 hover:bg-[#f6f9fe] hover:text-[#123b73]",
+                    )
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              ))}
+            </nav>
+
+            <a
+              href={`mailto:${profile.email}`}
+              className="inline-flex rounded-full border border-[#dbe7f8] bg-white px-3 py-2 text-sm font-medium text-[#123b73] transition hover:border-[#164fb4] hover:text-[#164fb4] sm:px-4 md:hidden"
+              aria-label="Contact Himadri"
+            >
+              Contact
+            </a>
+
+            <a
+              href={`mailto:${profile.email}`}
+              className="hidden rounded-full border border-[#dbe7f8] bg-white px-4 py-2 text-sm font-medium text-[#123b73] transition hover:border-[#164fb4] hover:text-[#164fb4] md:inline-flex"
+            >
+              Contact
+            </a>
+          </div>
+
+          <nav
+            className="mt-3 flex gap-2 overflow-x-auto pb-1 md:hidden"
+            aria-label="Mobile navigation"
+          >
             {navLinks.map((link) => (
               <NavLink
                 key={link.href}
                 to={link.href}
                 className={({ isActive }) =>
                   cn(
-                    "rounded-full px-4 py-2 text-sm transition",
+                    "shrink-0 rounded-full px-4 py-2 text-sm transition",
                     isActive
                       ? "bg-[#164fb4] text-white"
-                      : "text-[#123b73]/75 hover:bg-[#f6f9fe] hover:text-[#123b73]",
+                      : "border border-[#d9e8ff] bg-white text-[#123b73]/75 hover:border-[#164fb4] hover:text-[#164fb4]",
                   )
                 }
               >
@@ -65,22 +106,15 @@ export function Layout({ children }: LayoutProps) {
               </NavLink>
             ))}
           </nav>
-
-          <a
-            href={`mailto:${profile.email}`}
-            className="hidden rounded-full border border-[#dbe7f8] bg-white px-4 py-2 text-sm font-medium text-[#123b73] transition hover:border-[#164fb4] hover:text-[#164fb4] md:inline-flex"
-          >
-            Contact
-          </a>
         </div>
       </header>
 
       <main className="relative z-10">{children}</main>
 
       <footer className="relative z-10 border-t border-[#e3ecfb] bg-white">
-        <div className="container grid gap-8 px-6 py-10 lg:grid-cols-[1.25fr,1fr] lg:px-10">
+        <div className="container grid gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1.25fr,1fr] lg:px-10">
           <div>
-            <p className="font-serif text-[1.75rem] text-[#0d2c5f]">
+            <p className="font-serif text-[1.55rem] leading-tight text-[#0d2c5f] sm:text-[1.75rem]">
               Stories that move across books, campaigns, and digital spaces.
             </p>
             <p className="mt-3 max-w-xl text-sm leading-7 text-[#123b73]/72">
@@ -96,7 +130,7 @@ export function Layout({ children }: LayoutProps) {
                 return (
                   <a
                     key={social.href}
-                    className="footer-link"
+                    className="footer-link w-full justify-center sm:w-auto sm:justify-start"
                     href={social.href}
                     target="_blank"
                     rel="noreferrer"
@@ -112,19 +146,24 @@ export function Layout({ children }: LayoutProps) {
           </div>
 
           <div className="grid gap-3 text-sm text-[#123b73]/85">
-            <a className="footer-link" href={`mailto:${profile.email}`}>
+            <a className="footer-link w-full justify-start" href={`mailto:${profile.email}`}>
               <Mail size={16} />
               {profile.email}
             </a>
-            <a className="footer-link" href="tel:+917470547077">
+            <a className="footer-link w-full justify-start" href="tel:+917470547077">
               <Phone size={16} />
               {profile.phone}
             </a>
-            <a className="footer-link" href="https://maps.google.com/?q=Mumbai,Maharashtra">
+            <a className="footer-link w-full justify-start" href="https://maps.google.com/?q=Mumbai,Maharashtra">
               <MapPin size={16} />
               {profile.location}
             </a>
-            <a className="footer-link" href={profile.resumeHref} target="_blank" rel="noreferrer">
+            <a
+              className="footer-link w-full justify-start"
+              href={profile.resumeHref}
+              target="_blank"
+              rel="noreferrer"
+            >
               <ArrowUpRight size={16} />
               Resume folder
             </a>

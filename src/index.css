@@ -50,7 +50,7 @@ button {
 
 @layer components {
   .panel {
-    @apply rounded-[1.5rem] border border-[#e2ebfb] bg-white shadow-[0_10px_26px_rgba(15,53,117,0.05)] transition duration-300;
+    @apply rounded-[1.5rem] bg-white shadow-[0_10px_24px_rgba(15,53,117,0.04)] ring-1 ring-[#e8eef9] transition duration-300;
   }
 
   .tag {
@@ -62,11 +62,11 @@ button {
   }
 
   .cta-secondary {
-    @apply inline-flex items-center gap-2 rounded-full border border-[#dbe7f8] bg-white px-5 py-3 text-sm text-[#123b73] transition duration-300 hover:border-[#164fb4] hover:text-[#164fb4];
+    @apply inline-flex items-center gap-2 rounded-full px-1 py-1 text-sm text-[#123b73] underline-offset-4 transition duration-300 hover:text-[#164fb4] hover:underline;
   }
 
   .footer-link {
-    @apply inline-flex items-center gap-3 rounded-full border border-[#e2ebfb] bg-white px-4 py-3 transition duration-300 hover:border-[#164fb4] hover:text-[#164fb4];
+    @apply inline-flex items-center gap-3 rounded-[1rem] bg-[#fbfdff] px-4 py-3 ring-1 ring-[#e7eef9] transition duration-300 hover:text-[#164fb4] hover:ring-[#d6e4fb];
   }
 
   .eyebrow {

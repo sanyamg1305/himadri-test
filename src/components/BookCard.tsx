@@ -11,9 +11,13 @@ type BookCardProps = {
 export function BookCard({ book }: BookCardProps) {
   return (
     <motion.article variants={staggerItem} whileHover={{ y: -4 }} className="panel h-full overflow-hidden">
-      <img className="h-80 w-full object-cover transition duration-500 hover:scale-[1.01]" src={book.image} alt={book.title} />
-      <div className="p-6">
-        <h3 className="font-serif text-3xl text-[#0d2c5f]">{book.title}</h3>
+      <img
+        className="h-64 w-full object-cover transition duration-500 hover:scale-[1.01] sm:h-80"
+        src={book.image}
+        alt={book.title}
+      />
+      <div className="p-5 sm:p-6">
+        <h3 className="font-serif text-[2rem] text-[#0d2c5f] sm:text-3xl">{book.title}</h3>
         <p className="mt-4 text-sm leading-7 text-[#123b73]/76">{book.description}</p>
         <a
           href={book.href}

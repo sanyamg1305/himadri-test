@@ -17,7 +17,7 @@ export default function Work() {
       : projects.filter((project) => project.category === activeCategory);
 
   return (
-    <div className="container space-y-12 px-6 py-12 lg:px-10 lg:py-16">
+    <div className="container space-y-16 px-4 py-10 sm:px-6 sm:py-12 lg:space-y-20 lg:px-10 lg:py-20">
       <Reveal>
         <SectionHeading
           eyebrow="Work archive"
@@ -31,7 +31,7 @@ export default function Work() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="space-y-6"
+          className="space-y-8"
         >
           <FilterBar activeCategory={activeCategory} onSelect={setActiveCategory} />
           <p className="text-sm leading-7 text-[#123b73]/72">
