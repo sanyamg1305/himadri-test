@@ -2,11 +2,20 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Film, Mail, Phone } from "lucide-react";
 
 import { BookCard } from "@/components/BookCard";
+import { MediumCard } from "@/components/MediumCard";
 import { Reveal } from "@/components/Reveal";
 import { staggerContainer, staggerItem } from "@/components/motionVariants";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SocialCard } from "@/components/SocialCard";
-import { books, contactLinks, profile, socials, videoCv } from "@/data/portfolio";
+import {
+  books,
+  contactLinks,
+  mediumPosts,
+  mediumProfile,
+  profile,
+  socials,
+  videoCv,
+} from "@/data/portfolio";
 
 export default function Media() {
   return (
@@ -27,6 +36,39 @@ export default function Media() {
           >
             {books.map((book) => (
               <BookCard key={book.title} book={book} />
+            ))}
+          </motion.div>
+        </section>
+      </Reveal>
+
+      <Reveal>
+        <section className="space-y-10">
+          <SectionHeading
+            eyebrow="Medium"
+            title="A reading space for essays, reflections, and longer-form thoughts."
+            description={mediumProfile.bio}
+          />
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href={mediumProfile.href}
+              target="_blank"
+              rel="noreferrer"
+              className="cta-primary"
+            >
+              Visit Medium profile
+              <ArrowUpRight size={18} />
+            </a>
+            <p className="text-sm text-[#123b73]/70">{mediumProfile.handle}</p>
+          </div>
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="grid gap-6"
+          >
+            {mediumPosts.map((post) => (
+              <MediumCard key={post.href} post={post} />
             ))}
           </motion.div>
         </section>

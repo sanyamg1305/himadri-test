@@ -3,6 +3,7 @@ import type {
   ContactLink,
   LinkItem,
   Metric,
+  MediumEntry,
   ProjectCategory,
   ProjectEntry,
   SocialLink,
@@ -329,6 +330,23 @@ export const socials: SocialLink[] = [
     href: "https://www.linkedin.com/in/himadrijain/",
     summary:
       "Content, storytelling, and digital strategy insights designed to help brands and individuals connect meaningfully.",
+  },
+];
+
+export const mediumProfile = {
+  handle: "@himadri.jain27",
+  href: "https://medium.com/@himadri.jain27",
+  bio: "I am a writer who enjoys exploring ideas and turning them into clear, engaging pieces of work. Alongside articles, creative pieces, and long-form projects, she is also building Drimii as a space for thoughtful expression and meaningful storytelling.",
+};
+
+export const mediumPosts: MediumEntry[] = [
+  {
+    title: "Dare to be seen.",
+    href: "https://medium.com/@himadri.jain27/dare-to-be-seen-da1e07b939ef",
+    publishedAt: "Aug 16, 2025",
+    readTime: "4 min read",
+    excerpt:
+      "A reflective piece about social media visibility, fear of judgment, vulnerability, and learning to share creative work without shrinking yourself to fit other people's expectations.",
   },
 ];
 

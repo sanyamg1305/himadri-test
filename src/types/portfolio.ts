@@ -25,6 +25,14 @@ export type SocialLink = {
   summary: string;
 };
 
+export type MediumEntry = {
+  title: string;
+  href: string;
+  publishedAt: string;
+  readTime: string;
+  excerpt: string;
+};
+
 export type BookEntry = {
   title: string;
   description: string;
