@@ -17,6 +17,7 @@ export function MediumCard({ post }: MediumCardProps) {
     >
       <div>
         <p className="text-[11px] uppercase tracking-[0.24em] text-[#2b6de0]">
+          {post.platform ? `${post.platform} · ` : ""}
           {post.publishedAt} · {post.readTime}
         </p>
         <h3 className="mt-3 font-serif text-[2rem] leading-tight text-[#0d2c5f] sm:text-3xl">
@@ -31,7 +32,7 @@ export function MediumCard({ post }: MediumCardProps) {
         rel="noreferrer"
         className="mt-6 inline-flex items-center gap-2 text-sm text-[#123b73] transition hover:text-[#2b6de0]"
       >
-        Read on Medium
+        {post.ctaLabel ?? "Read article"}
         <ArrowUpRight size={16} />
       </a>
     </motion.article>

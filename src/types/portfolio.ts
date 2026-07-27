@@ -31,6 +31,8 @@ export type MediumEntry = {
   publishedAt: string;
   readTime: string;
   excerpt: string;
+  platform?: string;
+  ctaLabel?: string;
 };
 
 export type BookEntry = {

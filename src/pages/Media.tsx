@@ -8,6 +8,7 @@ import { staggerContainer, staggerItem } from "@/components/motionVariants";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SocialCard } from "@/components/SocialCard";
 import {
+  blogspotProfile,
   books,
   contactLinks,
   mediumPosts,
@@ -44,7 +45,7 @@ export default function Media() {
       <Reveal>
         <section className="space-y-10">
           <SectionHeading
-            eyebrow="Medium"
+            eyebrow="Writing"
             title="A reading space for essays, reflections, and longer-form thoughts."
             description={mediumProfile.bio}
           />
@@ -57,6 +58,14 @@ export default function Media() {
             >
               Visit Medium profile
               <ArrowUpRight size={18} />
+            </a>
+            <a
+              href={blogspotProfile.href}
+              target="_blank"
+              rel="noreferrer"
+              className="cta-secondary"
+            >
+              Open Blogspot archive
             </a>
             <p className="text-sm text-[#123b73]/70">{mediumProfile.handle}</p>
           </div>

@@ -339,12 +339,19 @@ export const mediumProfile = {
   bio: "I am a writer who enjoys exploring ideas and turning them into clear, engaging pieces of work. Alongside articles, creative pieces, and long-form projects, she is also building Drimii as a space for thoughtful expression and meaningful storytelling.",
 };
 
+export const blogspotProfile = {
+  label: "Blogs by Himadri",
+  href: "https://blogsbyhimadri.blogspot.com/",
+};
+
 export const mediumPosts: MediumEntry[] = [
   {
     title: "Lost and Found",
     href: "https://medium.com/@himadri.jain27/lost-and-found-2998981696e9",
     publishedAt: "May 3, 2026",
     readTime: "3 min read",
+    platform: "Medium",
+    ctaLabel: "Read on Medium",
     excerpt:
       "A thoughtful reflection on feeling lost and found at the same time, mental health awareness, emotional honesty, and learning to stay open to change without forcing certainty.",
   },
@@ -353,8 +360,20 @@ export const mediumPosts: MediumEntry[] = [
     href: "https://medium.com/@himadri.jain27/dare-to-be-seen-da1e07b939ef",
     publishedAt: "Aug 16, 2025",
     readTime: "4 min read",
+    platform: "Medium",
+    ctaLabel: "Read on Medium",
     excerpt:
       "A reflective piece about social media visibility, fear of judgment, vulnerability, and learning to share creative work without shrinking yourself to fit other people's expectations.",
+  },
+  {
+    title: "Am I living in PAPERTOWNS?",
+    href: "https://blogsbyhimadri.blogspot.com/2024/02/am-i-living-in-papertowns.html",
+    publishedAt: "Feb 22, 2024",
+    readTime: "6 min read",
+    platform: "Blogspot",
+    ctaLabel: "Read on Blogspot",
+    excerpt:
+      "A reflective essay inspired by John Green's Paper Towns, exploring illusion and reality, authenticity, human complexity, and what it means to live among 'paper people' in a paper town.",
   },
 ];
 
