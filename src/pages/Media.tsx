@@ -65,7 +65,7 @@ export default function Media() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="grid gap-6"
+            className="grid gap-6 lg:grid-cols-2"
           >
             {mediumPosts.map((post) => (
               <MediumCard key={post.href} post={post} />

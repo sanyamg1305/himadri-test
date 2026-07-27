@@ -341,6 +341,14 @@ export const mediumProfile = {
 
 export const mediumPosts: MediumEntry[] = [
   {
+    title: "Lost and Found",
+    href: "https://medium.com/@himadri.jain27/lost-and-found-2998981696e9",
+    publishedAt: "May 3, 2026",
+    readTime: "3 min read",
+    excerpt:
+      "A thoughtful reflection on feeling lost and found at the same time, mental health awareness, emotional honesty, and learning to stay open to change without forcing certainty.",
+  },
+  {
     title: "Dare to be seen.",
     href: "https://medium.com/@himadri.jain27/dare-to-be-seen-da1e07b939ef",
     publishedAt: "Aug 16, 2025",
