@@ -80,6 +80,38 @@ export default function Media() {
               <MediumCard key={post.href} post={post} />
             ))}
           </motion.div>
+
+          <motion.div
+            variants={staggerItem}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            className="panel overflow-hidden"
+          >
+            <div className="flex flex-col gap-3 border-b border-[#e8eef9] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.24em] text-[#2b6de0]">Blog Archive</p>
+                <h3 className="mt-2 font-serif text-[2rem] text-[#0d2c5f] sm:text-[2.4rem]">
+                  Embedded from Blogs by Himadri
+                </h3>
+              </div>
+              <a
+                href={blogspotProfile.href}
+                target="_blank"
+                rel="noreferrer"
+                className="cta-secondary self-start sm:self-auto"
+              >
+                Open in new tab
+              </a>
+            </div>
+
+            <iframe
+              src={blogspotProfile.href}
+              title="Blogs by Himadri"
+              loading="lazy"
+              className="h-[720px] w-full border-0 bg-white"
+            />
+          </motion.div>
         </section>
       </Reveal>
 
