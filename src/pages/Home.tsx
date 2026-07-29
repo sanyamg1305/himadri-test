@@ -38,13 +38,13 @@ export default function Home() {
         className="grid items-center gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:gap-12"
       >
         <div>
-          <div className="inline-flex items-center rounded-full border border-[#e3ecfb] bg-[#fbfdff] px-3 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[#2b6de0] sm:px-4 sm:text-[11px] sm:tracking-[0.26em]">
+          <div className="inline-flex items-center rounded-full border border-[#243B8F]/15 bg-[#FFF0C9]/40 px-3 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[#243B8F] sm:px-4 sm:text-[11px] sm:tracking-[0.26em]">
             Writing • Storytelling • Digital Expression
           </div>
-          <h1 className="mt-6 max-w-4xl font-serif text-[2.9rem] leading-[0.98] text-[#0d2c5f] sm:mt-8 sm:text-[3.6rem] md:text-[4.35rem]">
+          <h1 className="mt-6 max-w-4xl font-serif text-[2.9rem] leading-[0.98] text-[#243B8F] sm:mt-8 sm:text-[3.6rem] md:text-[4.35rem]">
             Himadri Jain shapes words, ideas, and digital storytelling into work that feels alive.
           </h1>
-          <p className="mt-5 max-w-2xl text-[15px] leading-7 text-[#123b73]/76 sm:mt-6 sm:text-base sm:leading-8 md:text-lg">
+          <p className="mt-5 max-w-2xl text-[15px] leading-7 text-[#243B8F]/76 sm:mt-6 sm:text-base sm:leading-8 md:text-lg">
             {profile.introduction}
           </p>
 
@@ -62,7 +62,7 @@ export default function Home() {
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="mt-8 grid gap-3 border-t border-[#dbe7f8] pt-6 sm:mt-10 sm:grid-cols-3"
+            className="mt-8 grid gap-3 border-t border-[#243B8F]/15 pt-6 sm:mt-10 sm:grid-cols-3"
           >
             {heroHighlights.map((item) => (
               <motion.div
@@ -70,10 +70,10 @@ export default function Home() {
                 variants={staggerItem}
                 className="px-1 py-1"
               >
-                <p className="text-[10px] uppercase tracking-[0.22em] text-[#2b6de0] sm:text-[11px] sm:tracking-[0.26em]">
+                <p className="text-[10px] uppercase tracking-[0.22em] text-[#243B8F] sm:text-[11px] sm:tracking-[0.26em]">
                   {item.label}
                 </p>
-                <p className="mt-2 font-serif text-[2rem] text-[#0d2c5f] sm:text-3xl">{item.value}</p>
+                <p className="mt-2 font-serif text-[2rem] text-[#243B8F] sm:text-3xl">{item.value}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -86,7 +86,7 @@ export default function Home() {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
             src={profile.heroImage}
             alt={profile.name}
-            className="relative z-10 h-[22rem] w-full rounded-[1.5rem] object-cover shadow-[0_24px_54px_rgba(43,109,224,0.10)] sm:h-[27rem] sm:rounded-[1.75rem] lg:h-[31rem]"
+            className="relative z-10 h-[22rem] w-full rounded-[1.5rem] object-cover shadow-[0_24px_54px_rgba(36,59,143,0.10)] sm:h-[27rem] sm:rounded-[1.75rem] lg:h-[31rem]"
           />
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -94,11 +94,11 @@ export default function Home() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
             className="panel max-w-sm p-4 sm:p-5"
           >
-            <p className="text-[11px] uppercase tracking-[0.24em] text-[#2b6de0]">Creative voice</p>
-            <p className="mt-3 font-serif text-2xl text-[#0d2c5f]">{profile.title}</p>
-            <p className="mt-2 text-sm leading-6 text-[#123b73]/72">{profile.location}</p>
+            <p className="text-[11px] uppercase tracking-[0.24em] text-[#243B8F]">Creative voice</p>
+            <p className="mt-3 font-serif text-2xl text-[#243B8F]">{profile.title}</p>
+            <p className="mt-2 text-sm leading-6 text-[#243B8F]/72">{profile.location}</p>
             <div className="subtle-divider mt-4" />
-            <p className="mt-4 text-sm leading-6 text-[#123b73]/72">
+            <p className="mt-4 text-sm leading-6 text-[#243B8F]/72">
               A published author and storyteller moving between campaign ideas, social content,
               scripting, and personal expression.
             </p>
@@ -131,11 +131,11 @@ export default function Home() {
               >
                 <motion.div
                   aria-hidden="true"
-                  className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(43,109,224,0.14),transparent_42%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(36, 59, 143, 0.14),transparent_42%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 />
                 <motion.div
                   aria-hidden="true"
-                  className="absolute inset-x-0 bottom-0 h-[2px] origin-left bg-gradient-to-r from-[#2b6de0] via-[#8fb7ff] to-transparent"
+                  className="absolute inset-x-0 bottom-0 h-[2px] origin-left bg-gradient-to-r from-[#243B8F] via-[#243B8F]/50 to-transparent"
                   initial={{ scaleX: 0.18, opacity: 0.45 }}
                   whileHover={{ scaleX: 1, opacity: 1 }}
                   transition={{ duration: 0.35, ease: "easeOut" }}
@@ -147,13 +147,13 @@ export default function Home() {
                     whileHover={{ x: 4 }}
                     transition={{ duration: 0.25, ease: "easeOut" }}
                   >
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#f4f8ff] text-[11px] font-medium uppercase tracking-[0.14em] text-[#2b6de0] sm:h-9 sm:w-9">
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#FFF0C9] text-[11px] font-medium uppercase tracking-[0.14em] text-[#243B8F] sm:h-9 sm:w-9">
                       0{index + 1}
                     </span>
                   </motion.div>
                   <div>
                     <motion.h3
-                      className="font-serif text-2xl text-[#0d2c5f]"
+                      className="font-serif text-2xl text-[#243B8F]"
                       initial={false}
                       whileHover={{ x: 6 }}
                       transition={{ duration: 0.25, ease: "easeOut" }}
@@ -161,7 +161,7 @@ export default function Home() {
                       {item.title}
                     </motion.h3>
                     <motion.p
-                      className="mt-2 text-sm leading-7 text-[#123b73]/76"
+                      className="mt-2 text-sm leading-7 text-[#243B8F]/76"
                       initial={false}
                       whileHover={{ x: 3 }}
                       transition={{ duration: 0.28, ease: "easeOut" }}
@@ -178,13 +178,13 @@ export default function Home() {
 
       <Reveal>
         <section className="px-1">
-          <p className="text-[10px] uppercase tracking-[0.22em] text-[#2b6de0] sm:text-[11px] sm:tracking-[0.24em]">
+          <p className="text-[10px] uppercase tracking-[0.22em] text-[#243B8F] sm:text-[11px] sm:tracking-[0.24em]">
             Himadri&apos;s words
           </p>
           <div className="mt-5 grid gap-6 md:grid-cols-2">
             {favoriteQuotes.map((quote) => (
-              <blockquote key={quote} className="border-l border-[#dbe7f8] pl-5">
-                <p className="font-serif text-[1.85rem] leading-tight text-[#0d2c5f] sm:text-[2.3rem]">
+              <blockquote key={quote} className="border-l border-[#243B8F]/15 pl-5">
+                <p className="font-serif text-[1.85rem] leading-tight text-[#243B8F] sm:text-[2.3rem]">
                   "{quote}"
                 </p>
               </blockquote>
@@ -244,13 +244,13 @@ export default function Home() {
       <Reveal>
         <section className="panel p-8 md:p-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center rounded-full border border-[#e3ecfb] bg-[#f8fbff] px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-[#2b6de0]">
+            <div className="inline-flex items-center rounded-full border border-[#243B8F]/15 bg-[#FFF0C9]/30 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-[#243B8F]">
               Available for creative collaboration
             </div>
-            <h2 className="mt-6 font-serif text-4xl text-[#0d2c5f] md:text-5xl">
+            <h2 className="mt-6 font-serif text-4xl text-[#243B8F] md:text-5xl">
               A space for collaborators, readers, brands, and anyone who connects with the work.
             </h2>
-            <p className="mt-4 text-sm leading-7 text-[#123b73]/76 md:text-base">
+            <p className="mt-4 text-sm leading-7 text-[#243B8F]/76 md:text-base">
               Explore the archive, spend time with the books and socials, or watch the video CV to
               see how the voice carries across different mediums.
             </p>

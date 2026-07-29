@@ -8,8 +8,8 @@
   font-family: "Instrument Sans", sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #123b73;
-  background: #f7fbff;
+  color: #243B8F;
+  background: #FFF0C9;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,8 +25,8 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at top, rgba(43, 109, 224, 0.06), transparent 24rem),
-    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    radial-gradient(circle at top, rgba(36, 59, 143, 0.06), transparent 24rem),
+    linear-gradient(180deg, #ffffff 0%, #FFF0C9 100%);
 }
 
 a {
@@ -50,30 +50,30 @@ button {
 
 @layer components {
   .panel {
-    @apply rounded-[1.5rem] bg-white shadow-[0_10px_24px_rgba(15,53,117,0.04)] ring-1 ring-[#e8eef9] transition duration-300;
+    @apply rounded-[1.5rem] bg-white shadow-[0_10px_24px_rgba(36,59,143,0.03)] ring-1 ring-[#243B8F]/10 transition duration-300;
   }
 
   .tag {
-    @apply rounded-full border border-[#e5edf9] bg-[#fbfdff] px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-[#123b73];
+    @apply rounded-full border border-[#243B8F]/15 bg-[#FFF0C9]/40 px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-[#243B8F];
   }
 
   .cta-primary {
-    @apply inline-flex items-center gap-2 rounded-full bg-[#164fb4] px-5 py-3 text-sm font-medium text-white transition duration-300 hover:translate-y-[-1px] hover:bg-[#123f91];
+    @apply inline-flex items-center gap-2 rounded-full bg-[#243B8F] px-5 py-3 text-sm font-medium text-white transition duration-300 hover:translate-y-[-1px] hover:bg-[#243B8F]/90;
   }
 
   .cta-secondary {
-    @apply inline-flex items-center gap-2 rounded-full px-1 py-1 text-sm text-[#123b73] underline-offset-4 transition duration-300 hover:text-[#164fb4] hover:underline;
+    @apply inline-flex items-center gap-2 rounded-full px-1 py-1 text-sm text-[#243B8F] underline-offset-4 transition duration-300 hover:text-[#243B8F]/80 hover:underline;
   }
 
   .footer-link {
-    @apply inline-flex items-center gap-3 rounded-[1rem] bg-[#fbfdff] px-4 py-3 ring-1 ring-[#e7eef9] transition duration-300 hover:text-[#164fb4] hover:ring-[#d6e4fb];
+    @apply inline-flex items-center gap-3 rounded-[1rem] bg-[#FFF0C9]/30 px-4 py-3 ring-1 ring-[#243B8F]/10 transition duration-300 hover:text-[#243B8F] hover:ring-[#243B8F]/25;
   }
 
   .eyebrow {
-    @apply text-[11px] font-medium uppercase tracking-[0.28em] text-[#2b6de0];
+    @apply text-[11px] font-medium uppercase tracking-[0.28em] text-[#243B8F];
   }
 
   .subtle-divider {
-    @apply h-px w-full bg-gradient-to-r from-transparent via-[#dbe7f8] to-transparent;
+    @apply h-px w-full bg-gradient-to-r from-transparent via-[#243B8F]/15 to-transparent;
   }
 }

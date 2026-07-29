@@ -17,13 +17,13 @@ export function BookCard({ book }: BookCardProps) {
         alt={book.title}
       />
       <div className="p-5 sm:p-6">
-        <h3 className="font-serif text-[2rem] text-[#0d2c5f] sm:text-3xl">{book.title}</h3>
-        <p className="mt-4 text-sm leading-7 text-[#123b73]/76">{book.description}</p>
+        <h3 className="font-serif text-[2rem] text-[#243B8F] sm:text-3xl">{book.title}</h3>
+        <p className="mt-4 text-sm leading-7 text-[#243B8F]/76">{book.description}</p>
         <a
           href={book.href}
           target="_blank"
           rel="noreferrer"
-          className="mt-6 inline-flex items-center gap-2 text-sm text-[#123b73] transition hover:text-[#2b6de0]"
+          className="mt-6 inline-flex items-center gap-2 text-sm text-[#243B8F] transition hover:text-[#243B8F]/80"
         >
           Buy on Amazon
           <ArrowUpRight size={16} />

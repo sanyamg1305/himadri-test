@@ -25,13 +25,13 @@ export function Layout({ children }: LayoutProps) {
   } as const;
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#f7fbff] text-[#123b73]">
+    <div className="relative min-h-screen overflow-hidden bg-[#FFF0C9]/30 text-[#243B8F]">
       <motion.div
-        className="fixed inset-x-0 top-0 z-50 h-[2px] origin-left bg-[#164fb4]"
+        className="fixed inset-x-0 top-0 z-50 h-[2px] origin-left bg-[#243B8F]"
         style={{ scaleX }}
       />
 
-      <header className="sticky top-0 z-40 border-b border-[#e3ecfb] bg-white/92 backdrop-blur-xl">
+      <header className="sticky top-0 z-40 border-b border-[#243B8F]/10 bg-white/92 backdrop-blur-xl">
         <div className="container px-4 py-3 sm:px-6 lg:px-10">
           <div className="flex items-center justify-between gap-4">
             <NavLink to="/" className="flex min-w-0 items-center gap-3">
@@ -41,10 +41,10 @@ export function Layout({ children }: LayoutProps) {
                 className="h-10 w-10 shrink-0 sm:h-11 sm:w-11"
               />
               <div className="min-w-0">
-                <p className="truncate font-serif text-lg leading-none text-[#0d2c5f] sm:text-xl">
+                <p className="truncate font-serif text-lg leading-none text-[#243B8F] sm:text-xl">
                   {profile.name}
                 </p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.24em] text-[#2b6de0] sm:text-xs sm:tracking-[0.28em]">
+                <p className="mt-1 text-[10px] uppercase tracking-[0.24em] text-[#243B8F] sm:text-xs sm:tracking-[0.28em]">
                   Writing in motion
                 </p>
               </div>
@@ -59,8 +59,8 @@ export function Layout({ children }: LayoutProps) {
                     cn(
                       "rounded-full px-4 py-2 text-sm transition",
                       isActive
-                        ? "bg-[#164fb4] text-white"
-                        : "text-[#123b73]/75 hover:bg-[#f6f9fe] hover:text-[#123b73]",
+                        ? "bg-[#243B8F] text-white"
+                        : "text-[#243B8F]/75 hover:bg-[#FFF0C9]/50 hover:text-[#243B8F]",
                     )
                   }
                 >
@@ -71,7 +71,7 @@ export function Layout({ children }: LayoutProps) {
 
             <a
               href={`mailto:${profile.email}`}
-              className="inline-flex rounded-full border border-[#dbe7f8] bg-white px-3 py-2 text-sm font-medium text-[#123b73] transition hover:border-[#164fb4] hover:text-[#164fb4] sm:px-4 md:hidden"
+              className="inline-flex rounded-full border border-[#243B8F]/20 bg-white px-3 py-2 text-sm font-medium text-[#243B8F] transition hover:border-[#243B8F] hover:text-[#243B8F] sm:px-4 md:hidden"
               aria-label="Contact Himadri"
             >
               Contact
@@ -79,7 +79,7 @@ export function Layout({ children }: LayoutProps) {
 
             <a
               href={`mailto:${profile.email}`}
-              className="hidden rounded-full border border-[#dbe7f8] bg-white px-4 py-2 text-sm font-medium text-[#123b73] transition hover:border-[#164fb4] hover:text-[#164fb4] md:inline-flex"
+              className="hidden rounded-full border border-[#243B8F]/20 bg-white px-4 py-2 text-sm font-medium text-[#243B8F] transition hover:border-[#243B8F] hover:text-[#243B8F] md:inline-flex"
             >
               Contact
             </a>
@@ -97,8 +97,8 @@ export function Layout({ children }: LayoutProps) {
                   cn(
                     "shrink-0 rounded-full px-4 py-2 text-sm transition",
                     isActive
-                      ? "bg-[#164fb4] text-white"
-                      : "border border-[#d9e8ff] bg-white text-[#123b73]/75 hover:border-[#164fb4] hover:text-[#164fb4]",
+                      ? "bg-[#243B8F] text-white"
+                      : "border border-[#243B8F]/15 bg-white text-[#243B8F]/75 hover:border-[#243B8F] hover:text-[#243B8F]",
                   )
                 }
               >
@@ -111,13 +111,13 @@ export function Layout({ children }: LayoutProps) {
 
       <main className="relative z-10">{children}</main>
 
-      <footer className="relative z-10 border-t border-[#e3ecfb] bg-white">
+      <footer className="relative z-10 border-t border-[#243B8F]/10 bg-white">
         <div className="container grid gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1.25fr,1fr] lg:px-10">
           <div>
-            <p className="font-serif text-[1.55rem] leading-tight text-[#0d2c5f] sm:text-[1.75rem]">
+            <p className="font-serif text-[1.55rem] leading-tight text-[#243B8F] sm:text-[1.75rem]">
               Stories that move across books, campaigns, and digital spaces.
             </p>
-            <p className="mt-3 max-w-xl text-sm leading-7 text-[#123b73]/72">
+            <p className="mt-3 max-w-xl text-sm leading-7 text-[#243B8F]/72">
               This portfolio brings Himadri Jain&apos;s work together as a living, shareable space:
               part archive, part introduction, and part expression of how she thinks, writes, and
               sees the world.
@@ -145,7 +145,7 @@ export function Layout({ children }: LayoutProps) {
             </div>
           </div>
 
-          <div className="grid gap-3 text-sm text-[#123b73]/85">
+          <div className="grid gap-3 text-sm text-[#243B8F]/85">
             <a className="footer-link w-full justify-start" href={`mailto:${profile.email}`}>
               <Mail size={16} />
               {profile.email}

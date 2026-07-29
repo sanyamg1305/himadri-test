@@ -34,10 +34,10 @@ export default function Work() {
           className="space-y-8"
         >
           <FilterBar activeCategory={activeCategory} onSelect={setActiveCategory} />
-          <p className="text-sm leading-7 text-[#123b73]/72">
-            Showing <span className="text-[#0d2c5f]">{visibleProjects.length}</span> project
+          <p className="text-sm leading-7 text-[#243B8F]/72">
+            Showing <span className="text-[#243B8F]">{visibleProjects.length}</span> project
             {visibleProjects.length === 1 ? "" : "s"} in the{" "}
-            <span className="text-[#2b6de0]">{activeCategory.replace("-", " ")}</span> category.
+            <span className="text-[#243B8F]">{activeCategory.replace("-", " ")}</span> category.
           </p>
         </motion.section>
       </Reveal>

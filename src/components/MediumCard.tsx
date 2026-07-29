@@ -16,21 +16,21 @@ export function MediumCard({ post }: MediumCardProps) {
       className="panel flex h-full flex-col justify-between p-5 sm:p-6"
     >
       <div>
-        <p className="text-[11px] uppercase tracking-[0.24em] text-[#2b6de0]">
+        <p className="text-[11px] uppercase tracking-[0.24em] text-[#243B8F]">
           {post.platform ? `${post.platform} · ` : ""}
           {post.publishedAt} · {post.readTime}
         </p>
-        <h3 className="mt-3 font-serif text-[2rem] leading-tight text-[#0d2c5f] sm:text-3xl">
+        <h3 className="mt-3 font-serif text-[2rem] leading-tight text-[#243B8F] sm:text-3xl">
           {post.title}
         </h3>
-        <p className="mt-4 text-sm leading-7 text-[#123b73]/76">{post.excerpt}</p>
+        <p className="mt-4 text-sm leading-7 text-[#243B8F]/76">{post.excerpt}</p>
       </div>
 
       <a
         href={post.href}
         target="_blank"
         rel="noreferrer"
-        className="mt-6 inline-flex items-center gap-2 text-sm text-[#123b73] transition hover:text-[#2b6de0]"
+        className="mt-6 inline-flex items-center gap-2 text-sm text-[#243B8F] transition hover:text-[#243B8F]/80"
       >
         {post.ctaLabel ?? "Read article"}
         <ArrowUpRight size={16} />

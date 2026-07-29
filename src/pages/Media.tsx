@@ -67,7 +67,7 @@ export default function Media() {
             >
               Open Blogspot archive
             </a>
-            <p className="text-sm text-[#123b73]/70">{mediumProfile.handle}</p>
+            <p className="text-sm text-[#243B8F]/70">{mediumProfile.handle}</p>
           </div>
           <motion.div
             variants={staggerContainer}
@@ -88,10 +88,10 @@ export default function Media() {
             viewport={{ once: true, amount: 0.15 }}
             className="panel overflow-hidden"
           >
-            <div className="flex flex-col gap-3 border-b border-[#e8eef9] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+            <div className="flex flex-col gap-3 border-b border-[#243B8F]/15 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
               <div>
-                <p className="text-[11px] uppercase tracking-[0.24em] text-[#2b6de0]">Blog Archive</p>
-                <h3 className="mt-2 font-serif text-[2rem] text-[#0d2c5f] sm:text-[2.4rem]">
+                <p className="text-[11px] uppercase tracking-[0.24em] text-[#243B8F]">Blog Archive</p>
+                <h3 className="mt-2 font-serif text-[2rem] text-[#243B8F] sm:text-[2.4rem]">
                   Embedded from Blogs by Himadri
                 </h3>
               </div>
@@ -159,17 +159,18 @@ export default function Media() {
             className="grid gap-6"
           >
             <motion.article variants={staggerItem} className="panel p-6">
-              <div className="flex items-center gap-3 text-[#2b6de0]">
+              <div className="flex items-center gap-3 text-[#243B8F]">
+                <img src="/logo-hj.svg" alt="HJ Icon" className="h-[18px] w-[18px]" style={{ display: "none" }} /> {/* Hidden reference to ensure SVG updates are loaded */}
                 <Film size={18} />
                 <p className="text-xs uppercase tracking-[0.28em]">Why video</p>
               </div>
-              <p className="mt-6 font-serif text-3xl text-[#0d2c5f]">{videoCv.title}</p>
-              <p className="mt-4 text-sm leading-7 text-[#123b73]/76">{videoCv.quote}</p>
+              <p className="mt-6 font-serif text-3xl text-[#243B8F]">{videoCv.title}</p>
+              <p className="mt-4 text-sm leading-7 text-[#243B8F]/76">{videoCv.quote}</p>
               <a
                 href={profile.videoCvHref}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 text-sm text-[#123b73] transition hover:text-[#2b6de0]"
+                className="mt-6 inline-flex items-center gap-2 text-sm text-[#243B8F] transition hover:text-[#243B8F]/80"
               >
                 Open drive backup
                 <ArrowUpRight size={16} />
@@ -177,8 +178,8 @@ export default function Media() {
             </motion.article>
 
             <motion.article variants={staggerItem} className="panel p-6">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#2b6de0]">Contact</p>
-              <h3 className="mt-4 font-serif text-3xl text-[#0d2c5f]">Let&apos;s work together.</h3>
+              <p className="text-xs uppercase tracking-[0.28em] text-[#243B8F]">Contact</p>
+              <h3 className="mt-4 font-serif text-3xl text-[#243B8F]">Let&apos;s work together.</h3>
               <div className="mt-6 grid gap-3">
                 {contactLinks.map((link) => (
                   <a
@@ -186,12 +187,12 @@ export default function Media() {
                     href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                    className="rounded-[1.5rem] border border-[#d9e8ff] bg-[#f8fbff] px-4 py-4 text-sm transition hover:border-[#2b6de0]"
+                    className="rounded-[1.5rem] border border-[#243B8F]/15 bg-[#FFF0C9]/30 px-4 py-4 text-sm transition hover:border-[#243B8F]"
                   >
-                    <span className="block text-xs uppercase tracking-[0.24em] text-[#123b73]/55">
+                    <span className="block text-xs uppercase tracking-[0.24em] text-[#243B8F]/55">
                       {link.label}
                     </span>
-                    <span className="mt-2 block text-[#0d2c5f]">{link.value}</span>
+                    <span className="mt-2 block text-[#243B8F]">{link.value}</span>
                   </a>
                 ))}
               </div>

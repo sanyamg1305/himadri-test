@@ -40,7 +40,7 @@ export function ProjectCard({ project, variant = "detail" }: ProjectCardProps) {
           />
         )}
 
-        <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-[#dce8fb] bg-white/95 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-[#123b73] backdrop-blur sm:left-4 sm:top-4 sm:text-[11px] sm:tracking-[0.18em]">
+        <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-[#243B8F]/15 bg-white/95 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-[#243B8F] backdrop-blur sm:left-4 sm:top-4 sm:text-[11px] sm:tracking-[0.18em]">
           <Play size={14} />
           {project.category.replace("-", " ")}
         </div>
@@ -48,19 +48,19 @@ export function ProjectCard({ project, variant = "detail" }: ProjectCardProps) {
 
       <div className="space-y-5 p-5 sm:p-6">
         <div>
-          <p className="text-[10px] uppercase tracking-[0.2em] text-[#2b6de0] sm:text-[11px] sm:tracking-[0.28em]">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-[#243B8F] sm:text-[11px] sm:tracking-[0.28em]">
             {project.role}
           </p>
-          <h3 className="mt-3 font-serif text-[1.7rem] leading-tight text-[#0d2c5f] sm:text-[2rem]">
+          <h3 className="mt-3 font-serif text-[1.7rem] leading-tight text-[#243B8F] sm:text-[2rem]">
             {project.title}
           </h3>
-          <p className="mt-3 text-sm leading-6 sm:leading-7 text-[#123b73]/74">{project.summary}</p>
+          <p className="mt-3 text-sm leading-6 sm:leading-7 text-[#243B8F]/74">{project.summary}</p>
         </div>
 
-        <ul className="grid gap-3 text-sm leading-6 text-[#123b73]/76">
+        <ul className="grid gap-3 text-sm leading-6 text-[#243B8F]/76">
           {visibleContributions.map((item) => (
             <li key={item} className="flex gap-3">
-              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#2b6de0]" />
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#243B8F]" />
               <span>{item}</span>
             </li>
           ))}
@@ -71,7 +71,7 @@ export function ProjectCard({ project, variant = "detail" }: ProjectCardProps) {
             {project.tools.map((tool) => (
               <span
                 key={tool}
-                className="rounded-full border border-[#e2ebfb] bg-[#f8fbff] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[#123b73]/75"
+                className="rounded-full border border-[#243B8F]/15 bg-[#FFF0C9]/40 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[#243B8F]/75"
               >
                 {tool}
               </span>
@@ -80,11 +80,11 @@ export function ProjectCard({ project, variant = "detail" }: ProjectCardProps) {
         ) : null}
 
         {!isFeature && project.outcomes?.length ? (
-          <div className="rounded-[1.1rem] border border-[#e2ebfb] bg-[#fbfdff] p-4 sm:rounded-[1.25rem]">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-[#2b6de0] sm:text-[11px] sm:tracking-[0.26em]">
+          <div className="rounded-[1.1rem] border border-[#243B8F]/15 bg-[#FFF0C9]/40 p-4 sm:rounded-[1.25rem]">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-[#243B8F] sm:text-[11px] sm:tracking-[0.26em]">
               Outcome
             </p>
-            <ul className="mt-3 space-y-2 text-sm leading-6 text-[#123b73]/74">
+            <ul className="mt-3 space-y-2 text-sm leading-6 text-[#243B8F]/74">
               {project.outcomes.map((outcome) => (
                 <li key={outcome}>{outcome}</li>
               ))}
@@ -97,7 +97,7 @@ export function ProjectCard({ project, variant = "detail" }: ProjectCardProps) {
             {project.hrefs.map((link) => (
               <a
                 key={link.href}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#c8dcff] bg-white px-4 py-2 text-sm text-[#123b73] transition hover:border-[#2b6de0] hover:text-[#2b6de0] sm:w-auto sm:justify-start"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#243B8F]/25 bg-white px-4 py-2 text-sm text-[#243B8F] transition hover:border-[#243B8F] hover:text-[#243B8F] sm:w-auto sm:justify-start"
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
