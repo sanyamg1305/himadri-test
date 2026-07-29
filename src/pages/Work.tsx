@@ -17,41 +17,50 @@ export default function Work() {
       : projects.filter((project) => project.category === activeCategory);
 
   return (
-    <div className="container space-y-16 px-4 py-10 sm:px-6 sm:py-12 lg:space-y-20 lg:px-10 lg:py-20">
-      <Reveal>
-        <SectionHeading
-          eyebrow="Work archive"
-          title="A structured archive of campaigns, writing, strategy, and independent work."
-          description="This archive is meant to feel organized without flattening the personality of the work, whether the focus is content strategy, scripting, campaign thinking, or self-initiated creative projects."
-        />
-      </Reveal>
+    <div className="container px-4 py-8 md:py-12">
+      <div className="max-w-6xl mx-auto border-4 border-[#243B8F] rounded-[2rem] bg-white p-6 md:p-12 shadow-[12px_12px_0px_0px_#243B8F] relative overflow-hidden space-y-12">
+        {/* Background Outline Number */}
+        <div className="absolute right-8 top-6 text-[18rem] font-black text-[#243B8F]/5 z-0 select-none pointer-events-none leading-none">
+          04
+        </div>
 
-      <Reveal>
+        <Reveal>
+          <div className="relative z-10">
+            <SectionHeading
+              eyebrow="Work archive"
+              title="A structured archive of campaigns, writing, strategy, and independent work."
+              description="This archive is meant to feel organized without flattening the personality of the work, whether the focus is content strategy, scripting, campaign thinking, or self-initiated creative projects."
+            />
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6 relative z-10"
+          >
+            <FilterBar activeCategory={activeCategory} onSelect={setActiveCategory} />
+            <p className="text-xs font-bold uppercase tracking-wider text-[#243B8F]/72">
+              Showing <span className="text-[#243B8F] font-black underline">{visibleProjects.length}</span> project
+              {visibleProjects.length === 1 ? "" : "s"} in the{" "}
+              <span className="text-[#243B8F] font-black underline">{activeCategory.replace("-", " ")}</span> category.
+            </p>
+          </motion.section>
+        </Reveal>
+
         <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="space-y-8"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="grid gap-6 md:gap-8 xl:grid-cols-2 relative z-10"
         >
-          <FilterBar activeCategory={activeCategory} onSelect={setActiveCategory} />
-          <p className="text-sm leading-7 text-[#243B8F]/72">
-            Showing <span className="text-[#243B8F]">{visibleProjects.length}</span> project
-            {visibleProjects.length === 1 ? "" : "s"} in the{" "}
-            <span className="text-[#243B8F]">{activeCategory.replace("-", " ")}</span> category.
-          </p>
+          {visibleProjects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
+          ))}
         </motion.section>
-      </Reveal>
-
-      <motion.section
-        variants={staggerContainer}
-        initial="hidden"
-        animate="visible"
-        className="grid gap-6 xl:grid-cols-2"
-      >
-        {visibleProjects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
-        ))}
-      </motion.section>
+      </div>
     </div>
   );
 }

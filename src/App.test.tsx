@@ -17,7 +17,7 @@ describe("Portfolio app", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: /himadri jain shapes words, ideas, and digital storytelling into work that feels alive/i,
+        name: /himadri jain/i,
       }),
     ).toBeInTheDocument();
 
