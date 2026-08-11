@@ -149,6 +149,25 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
+                  
+                  {/* Rotating stamp sticker */}
+                  <div className="absolute -bottom-5 -right-5 z-20 w-24 h-24 flex items-center justify-center select-none pointer-events-none md:pointer-events-auto">
+                    <div className="w-20 h-20 rounded-full border-2 border-[#243B8F] bg-[#FFF0C9] shadow-[4px_4px_0px_0px_#243B8F] flex items-center justify-center relative">
+                      <svg viewBox="0 0 100 100" className="w-full h-full animate-[spin_15s_linear_infinite] absolute inset-0">
+                        <path
+                          id="stampPath"
+                          d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
+                          fill="none"
+                        />
+                        <text className="text-[7.5px] font-black uppercase fill-[#243B8F] tracking-[0.08em]">
+                          <textPath href="#stampPath" startOffset="0%">
+                            D3 injection certified • D3 injection certified •
+                          </textPath>
+                        </text>
+                      </svg>
+                      <div className="absolute z-10 text-[#243B8F] font-black text-xs">D3</div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
