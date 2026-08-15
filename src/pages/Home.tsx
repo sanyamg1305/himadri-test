@@ -23,6 +23,7 @@ import {
 import { usePortfolioStore } from "@/store/usePortfolioStore";
 import { profile, metrics, experienceHighlights } from "@/data/portfolio";
 import type { ProjectCategory } from "@/types/portfolio";
+import { PoetryStamp } from "@/components/PoetryStamp";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -176,7 +177,7 @@ export default function Home() {
               </div>
 
               <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[0.8fr,1.2fr] gap-8 items-center my-auto">
-                {/* Left Column: Portrait & QR Card */}
+                {/* Left Column: Portrait & Poetry Card */}
                 <div className="flex flex-col gap-5 max-w-[280px] sm:max-w-[300px] mx-auto lg:mx-0 w-full">
                   <div className="relative border-4 border-[#243B8F] rounded-[1.5rem] overflow-hidden bg-white shadow-[6px_6px_0px_0px_#243B8F] aspect-square group transition-all duration-300 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#243B8F]">
                     <img
@@ -186,24 +187,7 @@ export default function Home() {
                     />
                   </div>
                   
-                  {/* Mock QR Contact Card */}
-                  <div className="border-2 border-[#243B8F] rounded-[1.5rem] bg-[#FFF0C9]/20 p-4 flex items-center gap-4 shadow-[4px_4px_0px_0px_#243B8F]">
-                    {renderQRCode()}
-                    <div>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-[#243B8F]">
-                        Resume Folder
-                      </p>
-                      <a
-                        href={profile.resumeHref}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-xs font-semibold text-[#243B8F] underline hover:text-[#243B8F]/80 flex items-center gap-1 mt-1"
-                      >
-                        Open Drive
-                        <ArrowUpRight size={12} />
-                      </a>
-                    </div>
-                  </div>
+                  <PoetryStamp />
                 </div>
 
                 {/* Right Column: HELLO & Info Grid */}
@@ -258,12 +242,12 @@ export default function Home() {
                         </p>
                       </div>
                       
-                      {/* Let's Work Together Contact Block */}
-                      <div className="p-3 rounded-xl bg-[#FFF0C9]/40 border-2 border-[#243B8F]/20 space-y-2">
+                      {/* Let's Work Together Contact Block with integrated Resume Drive */}
+                      <div className="p-3.5 rounded-xl bg-[#FFF0C9]/40 border-2 border-[#243B8F] space-y-3 shadow-[4px_4px_0px_0px_#243B8F] transition-all duration-300 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_0px_#243B8F]">
                         <h4 className="text-[10px] uppercase tracking-widest font-black text-[#243B8F]">
                           Let&apos;s Work Together:
                         </h4>
-                        <div className="space-y-1 text-[11px] font-bold text-[#243B8F]/95">
+                        <div className="space-y-1.5 text-[11px] font-bold text-[#243B8F]/95">
                           <a href={`mailto:${profile.email}`} className="flex items-center gap-2 hover:underline">
                             <Mail size={12} />
                             {profile.email}
@@ -275,6 +259,25 @@ export default function Home() {
                           <div className="flex items-center gap-2">
                             <MapPin size={12} />
                             {profile.location}
+                          </div>
+                        </div>
+
+                        {/* Integrated Resume link with QR Code */}
+                        <div className="border-t border-[#243B8F]/20 pt-3 flex items-center gap-3">
+                          {renderQRCode()}
+                          <div>
+                            <p className="text-[9px] font-black uppercase tracking-wider text-[#243B8F]/70">
+                              Resume Folder
+                            </p>
+                            <a
+                              href={profile.resumeHref}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-[10px] font-bold text-[#243B8F] underline hover:text-[#243B8F]/80 flex items-center gap-0.5 mt-0.5"
+                            >
+                              Open Drive
+                              <ArrowUpRight size={10} />
+                            </a>
                           </div>
                         </div>
                       </div>
