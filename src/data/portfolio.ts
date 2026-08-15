@@ -299,7 +299,7 @@ export const projects: ProjectEntry[] = [
     hrefs: [
       {
         label: "Listen on Spotify",
-        href: "https://open.spotify.com/show/7tR1X8PBC9CXBbsfrxg21L?si=86ba34b5eb374230",
+        href: "https://open.spotify.com/show/7tR1X8PBC9CXBbsfrxg21L?si=aw29epvgQ7yCyw6hYbHKEQ&utm_source=copy-link&sci=spotify%3Acard-config%3A24iPaCNTQwmBWKZ9aN5ItD",
       },
       {
         label: "Open magazine assets",
