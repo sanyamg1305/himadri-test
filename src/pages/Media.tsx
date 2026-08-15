@@ -50,6 +50,46 @@ export default function Media() {
       <Reveal>
         <section className="space-y-10">
           <SectionHeading
+            eyebrow="Podcast"
+            title="1% Better Podcast"
+            description="A self-driven audio project hosting conversations and snippets on habits, growth, and creative paths."
+          />
+          
+          {/* Cassette-themed Spotify Frame */}
+          <div className="max-w-2xl mx-auto border-4 border-[#243B8F] rounded-[2rem] bg-[#FFF0C9]/40 p-4 md:p-6 shadow-[8px_8px_0px_0px_#243B8F] relative overflow-hidden space-y-4">
+            {/* Cassette Header Zine Labels */}
+            <div className="flex items-center justify-between border-b-2 border-[#243B8F] pb-3 mb-2">
+              <div className="text-[10px] font-black uppercase tracking-widest text-[#243B8F] bg-[#FFF0C9] px-2 py-0.5 border border-[#243B8F] rounded-md shadow-[2px_2px_0px_0px_#243B8F] select-none">
+                Side A
+              </div>
+              <p className="text-[11px] font-sans font-black uppercase tracking-widest text-[#243B8F]/80 select-none">
+                1% BETTER PODCAST DECK
+              </p>
+              <div className="text-[10px] font-bold uppercase tracking-wider text-[#243B8F]/60 select-none">
+                Cassette Player
+              </div>
+            </div>
+
+            {/* Spotify Player Iframe */}
+            <div className="relative border-4 border-[#243B8F] rounded-[1.5rem] overflow-hidden bg-white shadow-[4px_4px_0px_0px_#243B8F]">
+              <iframe
+                src="https://open.spotify.com/embed/show/7tR1X8PBC9CXBbsfrxg21L?utm_source=generator"
+                width="100%"
+                height="352"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                title="1% Better Podcast by Himadri Jain"
+                className="w-full bg-[#FFF0C9]/10"
+              />
+            </div>
+          </div>
+        </section>
+      </Reveal>
+
+      <Reveal>
+        <section className="space-y-10">
+          <SectionHeading
             eyebrow="Writing"
             title="A reading space for essays, reflections, and longer-form thoughts."
             description={mediumProfile.bio}
